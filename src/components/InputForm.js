@@ -14,7 +14,7 @@ const InputForm = ({ inputData, setInputData, setPackages }) => {
       content: inputData
     }
 
-    axios.post('http://localhost:3001/api/parse', dataObject).then(response => {
+    axios.post('/api/parse', dataObject).then(response => {
       setPackages(response.data)
     })
   }
@@ -23,8 +23,7 @@ const InputForm = ({ inputData, setInputData, setPackages }) => {
     setInputData(event.target.value)
   }
   const useSampleData = () => {
-    axios.get('http://localhost:3001/api/sample').then(response => {
-      if(response.data === undefined) return
+    axios.get('/api/sample').then(response => {
       setPackages(response.data)
     })
   }
