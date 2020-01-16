@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Package = ({ pckge }) => {
+const Package = ({ pckge, setCurrentPackage }) => {
   return (
-    <li>{pckge}</li>
+    <li onClick={() => setCurrentPackage(pckge)}>{pckge}</li>
   )
 }
 
