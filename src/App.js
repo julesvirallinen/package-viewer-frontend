@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import parseJson from 'parse-json'
 import axios from 'axios'
-import Package from './components/Package'
 
-const PackageList = ({ list, setCurrentPackage }) => {
+const PackageList = ({ list, setCurrentPackage, sp }) => {
   const rows = () =>
-    list.map(pckge => (
+    list.sort().map(pckge => (
       <li key={pckge} onClick={() => setCurrentPackage(pckge)}>
-        {pckge}
+        {sp ? sp + pckge :  pckge}
       </li>
     ))
 
@@ -20,6 +18,8 @@ const PackageView = ({ currentPackage, packages, setCurrentPackage }) => {
   const dependencies = packageInfo['Dependencies']
   const reverseDependencies = packageInfo['Reverse dependencies']
   const description = packageInfo['Description']
+  const unavailable = packageInfo['Unavailable dependencies']
+
 
   return (
     <div>
@@ -29,6 +29,8 @@ const PackageView = ({ currentPackage, packages, setCurrentPackage }) => {
 
       <h3>Dependencies</h3>
       <PackageList list={dependencies} setCurrentPackage={setCurrentPackage} />
+      <PackageList list={unavailable} setCurrentPackage={()=>{}} sp="NOT INSTALLED: " />
+
       <h3>Reverse Dependencies</h3>
       <PackageList
         list={reverseDependencies}
