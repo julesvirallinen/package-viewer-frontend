@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 
 const PackageList = ({ list, setCurrentPackage, disabled }) => {
   if (disabled === undefined) {
-    var disabled = false
+    disabled = false
   }
   const packageStyle = {
     padding: '1.25em 1.4em',
