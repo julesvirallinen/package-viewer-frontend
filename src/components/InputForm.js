@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Button from 'react-bootstrap/Button';
 
 
 const InputForm = ({ inputData, setInputData, setPackages }) => {
@@ -34,11 +35,11 @@ const InputForm = ({ inputData, setInputData, setPackages }) => {
           <textarea value={inputData} onChange={handleDataChange} />
         </div>
         <div>
-          <button type="submit">add</button>
+          <Button variant="dark" type="submit">add</Button>
         </div>
       </form>
       <br /> or...
-      <button onClick={useSampleData}>Use sample data</button>
+      <Button variant="dark" onClick={useSampleData}>Use sample data</Button>
     </div>
   )
 }

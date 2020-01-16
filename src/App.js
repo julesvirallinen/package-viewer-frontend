@@ -4,12 +4,12 @@ import PackageView from './components/PackageView'
 import PackageList from './components/PackageList'
 
 
+
 const App = () => {
   const [packages, setPackages] = useState({})
   const [currentPackage, setCurrentPackage] = useState('')
   const [inputData, setInputData] = useState('')
   
-
   var packagesToList = Object.keys(packages)
   if (currentPackage !== '') packagesToList = []
 
