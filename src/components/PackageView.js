@@ -16,7 +16,6 @@ const PackageView = ({ currentPackage, packages, setCurrentPackage }) => {
   const unavailable = packageInfo['Unavailable dependencies']
 
   const h2Style = {
-    textAlign: 'center',
     whiteSpace: 'pre-line'
   }
 
@@ -35,7 +34,9 @@ const PackageView = ({ currentPackage, packages, setCurrentPackage }) => {
         <i style={h2Style}>{description}</i>
       </p>
 
-      <h3 style={h3Style}>Dependencies</h3>
+      {(dependencies.length > 0 || unavailable.length > 0) && (
+        <h3 style={h3Style}>Dependencies</h3>
+      )}
       <PackageList list={dependencies} setCurrentPackage={setCurrentPackage} />
       <PackageList
         list={unavailable}
@@ -43,7 +44,9 @@ const PackageView = ({ currentPackage, packages, setCurrentPackage }) => {
         disabled={true}
       />
 
-      <h3 style={h3Style}>Reverse Dependencies</h3>
+      {reverseDependencies.length > 0 && (
+        <h3 style={h3Style}>Reverse Dependencies</h3>
+      )}
       <PackageList
         list={reverseDependencies}
         setCurrentPackage={setCurrentPackage}

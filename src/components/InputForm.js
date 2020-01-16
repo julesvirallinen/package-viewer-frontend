@@ -24,6 +24,7 @@ const InputForm = ({ inputData, setInputData, setPackages }) => {
   }
   const useSampleData = () => {
     axios.get('http://localhost:3001/api/sample').then(response => {
+      if(response.data === undefined) return
       setPackages(response.data)
     })
   }

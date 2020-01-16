@@ -1,0 +1,32 @@
+body {
+    background: rgb(40,53,66);
+    background: linear-gradient(90deg, rgba(40,53,66,1) 0%, rgba(49,65,80,1) 24%, rgba(55,74,94,1) 100%);
+        
+  color: #708699;
+  margin-right: 50px;
+  margin-left: 50px;
+  font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+.title {
+  text-align: center;
+  font-family: 'Righteous', cursive;
+  color: #708699;
+}
+
+.main-container {
+    width: 70%;
+    background-color: #ffffff12;
+    padding: 40px;
+    border-radius: 19px;
+}
+
+.btn {
+    background-color: #708699;
+    color: #33516B;
+}
+
+::placeholder {
+    color: #33516B;
+}

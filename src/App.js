@@ -12,7 +12,6 @@ const App = () => {
   
   var packagesToList = Object.keys(packages)
   if (currentPackage !== '') packagesToList = []
-
   if (
     Object.entries(packages).length === 0 &&
     packages.constructor === Object
