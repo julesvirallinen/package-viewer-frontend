@@ -1,17 +1,14 @@
 import React from 'react'
-import Badge from 'react-bootstrap/Badge'
 import Button from 'react-bootstrap/Button'
 
-const PackageList = ({ list, setCurrentPackage, disabled }) => {
+const PackageList = ({ list, setCurrentPackage, disabled, filter }) => {
   if (disabled === undefined) {
     disabled = false
   }
-  const packageStyle = {
-    padding: '1.25em 1.4em',
-    margin: '0em 1em 1em 0em',
-    backgroundColor: '#708699'
-  }
 
+  if (filter) {
+    list = list.filter(pckge => pckge.includes(filter))
+  }
   const containerStyle = {
     justifyContent: 'flex-start',
     display: 'flex',

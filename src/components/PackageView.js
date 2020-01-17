@@ -20,7 +20,7 @@ const PackageView = ({ currentPackage, packages, setCurrentPackage }) => {
   }
 
   const backButton = {
-    float: 'right'
+    float: 'right',
   }
 
   const h3Style = {

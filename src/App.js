@@ -3,19 +3,16 @@ import InputForm from './components/InputForm'
 import PackageView from './components/PackageView'
 import PackageList from './components/PackageList'
 import Notification from './components/Notification'
+import FilterForm from './components/FilterForm'
 
 const App = () => {
   const [packages, setPackages] = useState({})
   const [currentPackage, setCurrentPackage] = useState('')
   const [inputData, setInputData] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
+  const [filter, setFilter] = useState('')
 
-  var packagesToList = Object.keys(packages)
-  if (currentPackage !== '') packagesToList = []
-  if (
-    Object.entries(packages).length === 0 &&
-    packages.constructor === Object
-  ) {
+  if (Object.entries(packages).length === 0) {
     return (
       <div>
         <Notification message={errorMessage} />
@@ -29,21 +26,24 @@ const App = () => {
       </div>
     )
   }
-  return (
-    <div>
-      <Notification message={errorMessage} />
 
+  if (currentPackage !== '') {
+    return (
       <PackageView
         currentPackage={currentPackage}
         packages={packages}
         setCurrentPackage={setCurrentPackage}
       />
-      <ul>
-        <PackageList
-          list={packagesToList}
-          setCurrentPackage={setCurrentPackage}
-        />
-      </ul>
+    )
+  }
+  return (
+    <div>
+      <FilterForm filter={filter} setFilter={setFilter} />
+      <PackageList
+        list={Object.keys(packages)}
+        setCurrentPackage={setCurrentPackage}
+        filter={filter}
+      />
     </div>
   )
 }
