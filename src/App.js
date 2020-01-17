@@ -26,7 +26,6 @@ const App = () => {
       </div>
     )
   }
-
   if (currentPackage !== '') {
     return (
       <PackageView

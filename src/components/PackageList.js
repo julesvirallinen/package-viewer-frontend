@@ -19,7 +19,6 @@ const PackageList = ({ list, setCurrentPackage, disabled, filter }) => {
     list.sort().map(pckge => (
       <Button
         variant="dark"
-        // style={packageStyle}
         key={pckge}
         onClick={() => setCurrentPackage(pckge)}
         disabled={disabled}
