@@ -3,13 +3,31 @@ import axios from 'axios'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
-const InputForm = ({ inputData, setInputData, setPackages }) => {
+const InputForm = ({
+  inputData,
+  setInputData,
+  setPackages,
+  setErrorMessage
+}) => {
   const formHandler = event => {
     event.preventDefault()
     parseData()
   }
 
+  const validate = () => {
+    if (inputData.length === 0) {
+      setErrorMessage('Input cannot be empty')
+      setTimeout(() => {
+        setErrorMessage('')
+      }, 5000)
+      return true
+    }
+    return false
+  }
+
   var parseData = () => {
+    if (validate()) return
+
     const dataObject = {
       content: inputData
     }
