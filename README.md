@@ -4,7 +4,7 @@
 
 [https://innovackage-browser.herokuapp.com/](https://innovackage-browser.herokuapp.com/) (It's a portmanteau of innovation and package - I know... it sounded better in my head)
 
-Pre-assignement for Reactor's summer internship. 
+[Pre-assignement for Reactor's summer internship.](https://www.reaktor.com/junior-dev-assignment/) 
 
 This is a simple web-app that exposes information about installed packages and their dependencies. 
 
